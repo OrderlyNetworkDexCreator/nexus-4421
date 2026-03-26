@@ -1,7 +1,8 @@
 {
   "name": "dex-creator-template",
   "description": "Template for Orderly SDK",
-  "private": true, "packageManager": "yarn@4.5.0",
+  "private": true,
+  "packageManager": "yarn@4.5.0",
   "sideEffects": false,
   "type": "module",
   "engines": {
