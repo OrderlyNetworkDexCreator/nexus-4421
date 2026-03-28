@@ -1,41 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import Helmet from 'react-helmet';
-import HttpsRequiredWarning from './components/HttpsRequiredWarning';
-import OrderlyProvider from './components/OrderlyProvider';
-import Outlet from './components/Outlet';
-import OnboardingModal from './components'; // Ensure the correct path
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import OnboardingModal from './OnboardingModal';
 
 const App = () => {
-    const [showOnboarding, setShowOnboarding] = useState(
-        localStorage.getItem('ntl_onboarded') === null
-    );
+  const [isFirstVisit, setIsFirstVisit] = useState(true);
 
-    useEffect(() => {
-        if (!localStorage.getItem('ntl_onboarded')) {
-            setShowOnboarding(true);
-        }
-    }, []);
+  useEffect(() => {
+    const hasVisited = localStorage.getItem('hasVisited');
+    if (hasVisited) {
+      setIsFirstVisit(false);
+    } else {
+      localStorage.setItem('hasVisited', 'true');
+    }
+  }, []);
 
-    const handleComplete = () => {
-        localStorage.setItem('ntl_onboarded', 'true');
-        setShowOnboarding(false);
-    };
-
-    const handleSkip = () => {
-        localStorage.setItem('ntl_onboarded', 'true');
-        setShowOnboarding(false);
-    };
-
-    return (
-        <OrderlyProvider>
-            <Helmet />
-            <HttpsRequiredWarning />
-            {showOnboarding && (
-                <OnboardingModal onComplete={handleComplete} onSkip={handleSkip} />
-            )}
-            <Outlet />
-        </OrderlyProvider>
-    );
+  return (
+    <Router>
+      <Helmet>
+        <title>My App</title>
+      </Helmet>
+      {isFirstVisit && <OnboardingModal />}
+      {/* Other components go here */}
+    </Router>
+  );
 };
 
 export default App;
