@@ -268,7 +268,6 @@ export const useOrderlyConfig = () => {
       "Trading",
       "Portfolio",
       "Markets",
-      "Leaderboard",
     ];
     const bottomNavMenus = enabledMenus
       .filter((menu) => supportedBottomNavMenus.includes(menu.name))
