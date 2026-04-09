@@ -41,4 +41,4 @@ window.__RUNTIME_CONFIG__ = {
   "VITE_SYMBOL_LIST": "",
   "VITE_RESTRICTED_REGIONS": "",
   "VITE_WHITELISTED_IPS": ""
-};
+}
