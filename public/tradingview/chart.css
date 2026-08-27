@@ -10,13 +10,7 @@ span {
     font-weight: 600;
     letter-spacing: 0.03em;
 }
-.theme-dark:root {
-    --tv-color-pane-background: #131519;
-    --tv-color-platform-background: #131519;
-    --up: #008676;
-   --down: #D92D6B;
-    --white-1: rgba(255, 255, 255, 0.98);
-}
+
 /* Disabled instant orders placement control */
 div[data-section-name='tradingConfirmEnabled'] {
     display: none;
@@ -55,25 +49,9 @@ div[data-section-name='extendLeftTradingLine'] {
 .wrapper-3X2QgaDd {
     flex-direction: row-reverse;
 }
-.buyButton-3X2QgaDd {
-    background-color: var(--up) !important;
-    border-color: var(--up) !important;
-    color: var(--white-1) !important;
-}
-.sellButton-3X2QgaDd {
-    background-color: var(--down) !important;
-    border-color: var(--down) !important;
-    color: var(--white-1) !important;
-}
-.loaderItem-18GTjpi- {
-    background-color: var(--white-1) !important;
-}
 .calculator-3AwNSLGC .calculator__input-3AwNSLGC {
     display: flex !important;
 }
-
-
-.theme-dark:root {
-    --tv-color-platform-background: #16141c;
-    --tv-color-pane-background: #16141c;
+[data-name="legend-source-exchange"] {
+    display: none !important;
 }
